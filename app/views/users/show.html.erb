@@ -9,6 +9,8 @@
   <p>
     <%= image_tag url_for(@user.card) %>
   </p>
+<% else %>
+  <p>画像がありません</p>
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

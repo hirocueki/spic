@@ -15,6 +15,13 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user %></td>
+        <td>
+        <% if user.card.attached? %>
+          画像あり
+        <% else %>
+          画像なし
+        <% end %>
+        </td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

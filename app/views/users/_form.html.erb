@@ -16,9 +16,20 @@
     <%= form.text_field :name %>
   </div>
 
+
+
   <div class="field">
+    <%= form.label :card %>
     <%= form.file_field :card %>
-    <%# <%= form.file_field :card , multiple: true, direct_upload: true %>
+  </div>
+
+  <div>
+    <% if user.card.attached? %>
+    <%= form.label "設定されている画像" %>
+      <p>
+        <%= image_tag url_for(user.card) %>
+      </p>
+    <% end %>
   </div>
 
   <div class="actions">
